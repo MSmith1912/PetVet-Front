@@ -3,13 +3,13 @@ import UserDetails from '../components/UserDetails';
 
 const UserPage = ({ userList }) => {
 
-    if(userList === null) return <div>no users!</div>;
-
+    if(!userList) return <div>no users!</div>;
+    console.log(userList);
     return (<>
         <div>
             <h1>User Page</h1>
             {userList.map((user) => (
-                <UserDetails key={user.userId} details={user}/>
+                <UserDetails key={user.user_id} user={user}/>
             ))}
             
         </div>

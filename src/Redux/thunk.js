@@ -24,7 +24,7 @@ export const createUserRequest = body => dispatch => {
 export const loadAllUsers = () => dispatch => {
     try {
         getAllUsers().then(res => {
-            dispatch(loadAllUsersAction(res));
+            dispatch(loadAllUsersAction(res.data));
         });
     } catch (err) {
         dispatch(displayAlert(err));
