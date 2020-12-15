@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AnimalPage = () => (
+const AnimalPage = ({ animalList }) => (
     <>
         <div>
             <h1>Animal Page</h1>

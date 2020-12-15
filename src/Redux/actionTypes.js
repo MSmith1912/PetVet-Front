@@ -1,0 +1,3 @@
+export const CREATE_USER = "CREATE_USER";
+export const LOAD_SINGLE_USER= "LOAD_SINGLE_USER";
+export const LOAD_ALL_USERS = "LOAD_ALL_USERS";
