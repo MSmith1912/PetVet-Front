@@ -16,8 +16,14 @@ export const getAllUsers = () => axios({
   headers: headers
 });
 
-export const getUserById = userId => axios({
+export const getUserById = user_id => axios({
   method: "GET",
-  url: `${backendBaseUrl}/userController/GetUserById/${userId}`,
+  url: `${backendBaseUrl}/userController/GetUserById/${user_id}`,
   headers: headers
 });
+
+export const deleteUser = user_id => axios({
+  method: "PATCH",
+  url: `${backendBaseUrl}/userController/DeleteUserById/${user_id}`,
+  headers: headers
+})

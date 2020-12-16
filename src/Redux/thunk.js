@@ -31,6 +31,26 @@ export const loadAllUsers = () => dispatch => {
     }
 }
 
+export const getSingleUser = (user_id) => async dispatch => {
+    try {
+        getUserById(user_id).then(res => {
+            dispatch(loadSingleUserAction(res.data));
+        })
+    } catch (err) {
+        dispatch(displayAlert(err));
+    }
+}
+
+export const deleteUser = (user_id) => async dispatch => {
+    try {
+        deleteUser(user_id).then(res => {
+            dispatch(loadAllUsersAction(res.data))
+        })
+    } catch (err) {
+        dispatch(displayAlert(err));
+    }
+}
+
 export const displayAlert = (text) => () => {
     alert(text);
   };

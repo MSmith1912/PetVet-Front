@@ -2,7 +2,7 @@ import React, { useEffect }from 'react';
 import { connect } from "react-redux";
 import { selectAllUsers } from '../Redux/selector';
 import { loadAllUsers } from "../Redux/thunk";
-import UserPage from '../Pages/UserPage';
+import ListUsersPage from '../Pages/ListUsersPage';
 
 const AllUsersContainer = ({retrieveAllUsers, users}) => {
     
@@ -11,7 +11,7 @@ const AllUsersContainer = ({retrieveAllUsers, users}) => {
       }, []);
 
     return (
-        <UserPage userList={users}/>
+        <ListUsersPage userList={users}/>
     )
 };
 

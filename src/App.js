@@ -5,6 +5,8 @@ import AnimalPage from './Pages/AnimalPage';
 import NavBar from './components/NavBar';
 import { Component } from 'react';
 import AllUsersContainer from './containers/AllUsersContainer';
+import SingleUserPage from './Pages/SingleUserPage';
+import SingleUserContainer from './containers/SingleUserContainer';
 
 class App extends Component {
   render(){
@@ -16,6 +18,7 @@ class App extends Component {
             <Switch>
               <Route path="/" component={HomePage} exact/>
               <Route path="/users" component={AllUsersContainer} />
+              <Route path="/user/:user_id" component={SingleUserContainer} />
               <Route path="/animals" component={AnimalPage} />
             </Switch>
           </div>
