@@ -22,7 +22,7 @@ export const getUserById = user_id => axios({
   headers: headers
 });
 
-export const deleteUser = user_id => axios({
+export const deleteUserById = user_id => axios({
   method: "PATCH",
   url: `${backendBaseUrl}/userController/DeleteUserById/${user_id}`,
   headers: headers

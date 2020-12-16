@@ -6,7 +6,8 @@ import {
 import {
     createUser,
     getUserById,
-    getAllUsers
+    getAllUsers, 
+    deleteUserById
 } from './ApiCalls/apiCalls';
 
 export const createUserRequest = body => dispatch => {
@@ -41,11 +42,10 @@ export const getSingleUser = (user_id) => async dispatch => {
     }
 }
 
-export const deleteUser = (user_id) => async dispatch => {
+export const deleteUserByIdRequest = (user_id) => async dispatch => {
     try {
-        deleteUser(user_id).then(res => {
-            dispatch(loadAllUsersAction(res.data))
-        })
+            deleteUserById(user_id)
+            window.location = "/users";
     } catch (err) {
         dispatch(displayAlert(err));
     }

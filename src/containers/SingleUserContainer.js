@@ -1,11 +1,11 @@
 import React, { useEffect }from 'react';
 import { connect } from "react-redux";
 import { selectUserById } from '../Redux/selector';
-import { getSingleUser, deleteUser } from "../Redux/thunk";
+import { getSingleUser, deleteUserByIdRequest } from "../Redux/thunk";
 import SingleUserPage from '../Pages/SingleUserPage';
 import { useParams } from 'react-router-dom';
 
-const SingleUserContainer = ({ getUserById, individualUser, deleteUser }) => {
+const SingleUserContainer = ({ getUserById, individualUser, deleteUserById }) => {
 
     const { user_id } = useParams()
 
@@ -20,7 +20,7 @@ const SingleUserContainer = ({ getUserById, individualUser, deleteUser }) => {
     return (
         <SingleUserPage 
             individualUser={individualUser}
-            deleteUser={deleteUser}/>
+            deleteUserById={deleteUserById}/>
     )
 };
 
@@ -30,7 +30,7 @@ const mapStateToProps = state => ({
 
 const mapDispacthToProps = dispatch => ({
     getUserById: id => dispatch(getSingleUser(id)),
-    deleteUser: id => dispatch(deleteUser(id))
+    deleteUserById: id => dispatch(deleteUserByIdRequest(id))
 });
 
 export default connect(mapStateToProps, mapDispacthToProps)(SingleUserContainer);
