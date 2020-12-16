@@ -15,7 +15,7 @@ export const createUserRequest = body => dispatch => {
         createUser(body)
           .then(res => {
               dispatch(createUserAction(res));
-              window.location = "/";
+              window.location = "/users";
           });
     } catch (err) {
         dispatch(displayAlert(err));

@@ -4,7 +4,12 @@ import { CreateUser } from '../Pages/CreateUser';
 import { createUserRequest } from '../Redux/thunk';
 
 const CreateUserContainer = ({ onCreateUserPressed }) => {
-    <CreateUser onCreateUserPressed={onCreateUserPressed}/>
+    return (
+        <>
+            <CreateUser onCreateUserPressed={onCreateUserPressed}/>
+        </>
+    )
+    
 }
 
 const mapStateToProps = state => ({
