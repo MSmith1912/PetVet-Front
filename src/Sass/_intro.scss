@@ -1,0 +1,28 @@
+header {
+    .fullheight {
+        @include backImage('../images/icons/brand2.png');
+        //@include display-flex();
+        //@include align-items(center);
+        //@include justify-content(center);
+        border-radius: 10%;
+        .hgroup {
+            padding: 100px 0;
+            text-shadow: 1px 1px $light;
+            h1 {
+                color: $dark;
+                font-size: 5em;
+                font-weight: $heavy;
+                line-height: .8em;
+                //@include text-shadow($dark 0 0 20px);
+                text-align: center;
+            } // h1
+
+            p {
+                text-align: center;
+                font-weight: $bold;
+                font-size: 2em;
+                color: $dark;
+            }
+        } // hgroup
+    } // fullheight
+}

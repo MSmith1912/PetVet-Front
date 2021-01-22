@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,600;0,800;1,300&display=swap');
+
+//@include border-box-sizing; // uses borer box sizing like old IE
+
+// Susy config
+$susy: (
+    columns: 12,
+    container:  60em,
+    guuters: 1/4,
+    gutter-position: inside
+);
+
+// Breakpoint variables
+$narrow: 400px;
+$small:  650px;
+$medium: 960px;
+$wide:   1200px;
+
+// Add colour palette
+$blue:    #063642;
+$green:   #45B29D;
+$yellow:  #EFC94C;
+$orange: #E27A3F;
+$red:     #Df4848;
+$pink:    #CD0069;
+$purple:  #6C71C4;
+$dark:    #000000;
+$light:   #FFFFFF;
+
+$background-color: darken($blue, 0);
+$type-default: $dark;
+$nav-background: $blue;
+$nav-foreground: $light;
+$nav-hover: $yellow;
+$nav-brand-bg: $red;
+$header-sub: $dark;
+
+// Font variables
+$font-family : 'Exo 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$thin:   200;
+$normal: 400;
+$bold :  600;
+$heavy:  800;
+
+$head-font:  $thin 1.5em/1.5em $font-family;
+$main-font:  $thin 1em/1.5em $font-family;
+$head-color: lighten($blue, 20);

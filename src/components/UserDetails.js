@@ -1,17 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const UserDetails = ({ individualUser }) => {
 
     if(!individualUser) return <div>No user</div>
+    console.log(individualUser);
 
     return (
         <>
-            <h3>{individualUser.username}</h3>
-            <p>{individualUser.firstName}</p>
-            <p>{individualUser.lastName}</p>
-            <p>{individualUser.dob}</p>
-            <p>{individualUser.access}</p>
+            <div className="details">
+                <h3 className="headings">{individualUser[0].username}</h3>
+                <p>{individualUser[0].firstName}</p>
+                <p>{individualUser[0].lastName}</p>
+                <p>{individualUser[0].dob}</p>
+                <p>{individualUser[0].access}</p>
+            </div>
         </>
     )
 }

@@ -1,22 +1,18 @@
-import React, { useEffect }from 'react';
+import React from 'react';
 import { connect } from "react-redux";
 import { selectUserById } from '../Redux/selector';
-import { getSingleUser, deleteUserByIdRequest } from "../Redux/thunk";
+import { deleteUserByIdRequest } from "../Redux/thunk";
 import SingleUserPage from '../Pages/SingleUserPage';
 import { useParams } from 'react-router-dom';
 
-const SingleUserContainer = ({ getUserById, individualUser, deleteUserById }) => {
+const SingleUserContainer = ({ individualUser, deleteUserById }) => {
 
-    const { user_id } = useParams()
-
-    useEffect(() => {
-        getUserById(user_id);
-    }, []);
+    const { user_id } = useParams();
 
     if(!individualUser) {
         return <div>User with ID:{user_id} not found</div>;
     }
-   
+    console.log(individualUser);
     return (
         <SingleUserPage 
             individualUser={individualUser}
@@ -29,8 +25,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispacthToProps = dispatch => ({
-    getUserById: id => dispatch(getSingleUser(id)),
-    deleteUserById: id => dispatch(deleteUserByIdRequest(id))
+    deleteUserById: user_id => dispatch(deleteUserByIdRequest(user_id))
 });
 
 export default connect(mapStateToProps, mapDispacthToProps)(SingleUserContainer);

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 
-export const CreateUser = ({ onCreateUserPressed }) => {
+export const CreateUser = ({ onCreateUserPressed, formDisplay, toggleForm }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [DOB, setDOB] = useState("");
+    const [dob, setDOB] = useState("");
     const [access, setAccess] = useState("");
 
     const body = {
@@ -14,12 +14,13 @@ export const CreateUser = ({ onCreateUserPressed }) => {
         password: password,
         firstName: firstName,
         lastName: lastName,
-        DOB: DOB,
+        dob: dob,
         access: access
     }
 
     return (
-        <div className="components">
+        <div className="createUser">
+            <h1>Add User</h1>
             <Form>
                 <Form.Group controlId="username">
                     <Form.Text className="username-text"></Form.Text>
@@ -69,13 +70,13 @@ export const CreateUser = ({ onCreateUserPressed }) => {
                     />
                 </Form.Group>
 
-                <Form.Group controlId="DOB">
-                    <Form.Text className="DOB-text"></Form.Text>
-                    <Form.Label>DOB: </Form.Label>
+                <Form.Group controlId="dob">
+                    <Form.Text className="dob-text"></Form.Text>
+                    <Form.Label>dob: </Form.Label>
                     <Form.Control
-                        type="text"
-                        name="DOB"
-                        value={DOB}
+                        type="date"
+                        name="dob"
+                        value={dob}
                         placeholder="29/06/1991"
                         onChange={(event) => setDOB(event.target.value)}
                     />
@@ -88,7 +89,7 @@ export const CreateUser = ({ onCreateUserPressed }) => {
                         type="text"
                         name="access"
                         value={access}
-                        placeholder="Customer,"
+                        placeholder="Customer, Admin"
                         onChange={(event) => setAccess(event.target.value)}
                     />
                 </Form.Group>

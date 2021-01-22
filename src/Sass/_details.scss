@@ -1,0 +1,21 @@
+.single { 
+
+    h1 {
+        color: $head-color;
+    }
+
+    h3, p {
+        margin: auto;
+        width: 50%;
+    } // h3 p
+
+    .details {
+        color: $light;
+        margin: auto;
+        width: 50%;
+        border: 1px solid $head-color;
+        border-radius: 10%;
+        background-color: lighten($blue, 20);
+    } // details
+}
+

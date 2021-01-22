@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { CreateUser } from '../Pages/CreateUser';
 import { createUserRequest } from '../Redux/thunk';
+import  formDisplay from '../App'
+import { FaPlus } from 'react-icons/fa';
 
-const CreateUserContainer = ({ onCreateUserPressed }) => {
+const CreateUserContainer = ({ onCreateUserPressed, toggleForm, formDisplay }) => {
+
+    const [open, setOpen ] = useState(false); 
+
     return (
         <>
-            <CreateUser onCreateUserPressed={onCreateUserPressed}/>
+            <button onClick={() => {
+                setOpen(!open);
+            }}>Add User</button>
+
+            {open === true ? (
+                <CreateUser onCreateUserPressed={onCreateUserPressed} />
+            ) : (
+                <div>Would you like to add a user?</div>
+            )}
         </>
     )
     

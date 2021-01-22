@@ -1,0 +1,58 @@
+header #nav {
+    @include clearFix();
+    // @include background-image(linear-gradient(top
+    //     , lighten()));
+
+    .navbar {
+        //@include container;
+        .brand {
+            //@include span(4); 
+            float: left;
+            font-weight: $bold;
+            font-family: $head-font;
+            text-align: center;
+            text-transform: uppercase;
+            a {
+                color: $nav-foreground;
+                text-decoration: none;
+                text-align: center;
+                display: inline-block;
+                padding: 10px;
+                font-size: 1.5em;
+                &.brand2 { background-image: url('../images/icons/brand.png'); }
+                   
+            } // a
+        } // brand
+
+        ul {
+            //@include span(8 at 4 of 12);
+            list-style-type: none;
+            li {
+                float: left;
+                a {
+                    color: $nav-foreground;
+                    font: $main-font;
+                    font-size: 1em;
+                    display: inline-block;
+                    padding: 10px 10px 10px 45px;
+                    text-decoration: none;
+
+                    // icon styles
+                    background-size: 35px;
+                    background-repeat: no-repeat;
+                    background-position: 2px;
+                    &.home { background-image: url('../images/icons/home.png'); }
+                    &.users { background-image: url('../images/icons/users.png'); }
+                    &.animals { background-image: url('../images/icons/animals.png'); }
+                    &:hover {
+                        background-color: $nav-hover;
+                        color: $blue;
+                    }
+                } // a
+
+            } // li
+        } // ul
+
+        
+    } // navbar
+} // header #nav

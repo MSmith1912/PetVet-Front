@@ -1,18 +1,27 @@
 import {
     CREATE_USER,
     LOAD_SINGLE_USER,
+    LOAD_SINGLE_ANIMAL,
     LOAD_ALL_USERS,
+    LOAD_ALL_ANIMALS,
+    CHANGE_STATE_ORDER,
+    SEARCH_STATE_FOR,
+    SET_STATE_SINGLE,
+    SET_STATE_USER_ORDER,
+    SET_STATE_ANIMAL_ORDER
   } from './actionTypes';
   
   const initialState = {
-    users: [],           // To store all our trades
+    users: [],          
     animals: [],
     individualUser: {},
-    individualAnimal: {}
+    individualAnimal: {},
+    single: '',
+    order: '',
+    direction: 'asc',
+    queryText: '',
   }
-  // action refers to:
-  // - type of action i.e. create, save, delete etc.
-  // - payload which is the trade from the back
+
   export const reducer = (state = initialState, action) => {
     const { type, payload } = action;
   
@@ -20,15 +29,22 @@ import {
       case CREATE_USER: {
         const { user } = payload;
         return {
-          ...state,                    // makes a copy of the state, must always make a copy when using redux.
-          users: state?.users?.data?.concat(user.data),  // then adds the new trade to the copy
+          ...state,                 
+          users: state?.users?.data?.concat(user.data),
         }
       }
       case LOAD_SINGLE_USER: {
-        const { singleUser } = payload;
+        const { individualUser } = payload;
         return {
           ...state,
-          individualUser: singleUser
+          individualUser: individualUser
+        }
+      }
+      case LOAD_SINGLE_ANIMAL: {
+        const { singleAnimal } = payload;
+        return {
+          ...state,
+          individualAnimal: singleAnimal
         }
       }
       case LOAD_ALL_USERS: {
@@ -36,6 +52,47 @@ import {
         return {
           ...state,
           users: allUsers
+        }
+      }
+      case LOAD_ALL_ANIMALS: {
+        const { allAnimals} = payload;
+        return {
+          ...state,
+          animals: allAnimals
+        }
+      }
+      case CHANGE_STATE_ORDER: {
+        const { order, direction} = payload;
+        return {
+          ...state,
+          order: order,
+          direction: direction
+        }
+      }
+      case SEARCH_STATE_FOR: {
+        const { queryText } = payload;
+        return {
+          ...state,
+          queryText: queryText
+        }
+      }
+      case SET_STATE_SINGLE: {
+        const { user_id } = payload;
+        return {
+          ...state,
+          single: user_id,
+        }
+      }
+      case SET_STATE_USER_ORDER: {
+        return {
+          ...state,
+          order: 'username'
+        }
+      }
+      case SET_STATE_ANIMAL_ORDER: {
+        return {
+          ...state,
+          order: 'name'
         }
       }
       default:

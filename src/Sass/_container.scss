@@ -1,0 +1,61 @@
+#container {
+    color: $light;
+    background: lighten($background-color, 20);
+    padding: 10px 10px;
+    border-radius: 5%;
+    // button {
+    //     color: #fff !important;
+    //     text-transform: uppercase;
+    //     text-decoration: none;
+    //     background: #60a3bc;
+    //     padding: 10px;
+    //     border-radius: 50px;
+    //     display: inline-block;
+    //     border: none;
+    // }
+    .search {
+        border-bottom: 1px solid $background-color;
+        text-decoration: underline;
+        padding-bottom: 10px;
+        h1 {
+            text-decoration: underline;
+            text-shadow: 2px 2px darken($background-color, 20);
+        } // h1
+
+        input {
+            margin: 0px 50px;
+        } // input 
+
+        .userSort {
+            
+        }
+        
+    } // search 
+
+    .createUser {
+        @include clearFix();
+        margin: auto;
+        width: 50%;
+        form {
+            //background: $blue;
+        } // form
+        label {
+            //background: $red;
+            margin-left: 20%;
+        }
+        input {
+            float: right;
+            margin-right: 20%;
+            //@include: 10px;
+            //background: $orange;
+        }
+        padding-bottom: 10px;
+        border-bottom: 1px solid $background-color;
+    } // createUser
+
+    .listUsers {
+        margin-top: 10px;
+        border-top: 1px solid $background-color;
+    } // listUsers
+
+} // container
